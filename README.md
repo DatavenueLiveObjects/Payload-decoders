@@ -33,7 +33,7 @@ The samples can be run in your favourite IDE (Eclipse, IntelliJ) or using the "m
 mvn install:install-file -Dfile="<your absolute path to lo-js-decoder-test-framework-utils-1.2.0-jar-with-dependencies.jar>" -DgroupId="com.orange.lo" -DartifactId="lo-js-decoder-test-framework-utils" -Dversion="1.2.0" -Dpackaging="jar"
 ```
 
-- [See Github Wiki for user manual]( https://github.com/blev007/decoder-framework/wiki )
+- [See Github Wiki for user manual]( https://github.com/DatavenueLiveObjects/Payload-decoders/wiki )
 ******************************************************************************************
 
 
