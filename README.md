@@ -38,4 +38,4 @@ mvn install:install-file -Dfile="<your absolute path to lo-js-decoder-test-frame
 ******************************************************************************************
 ## License : 
 
-This software is under the [3-Clause BSD License] ( https://github.com/DatavenueLiveObjects/Payload-decoders/blob/master/LICENSE )
+This software is under the [3-Clause BSD License]( https://github.com/DatavenueLiveObjects/Payload-decoders/blob/master/LICENSE )
