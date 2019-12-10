@@ -21,7 +21,7 @@ Please send an email to <liveobjects.support@orange.com> with the subject "JS de
 
 ******************************************************************************************
 Pre-requisite : in order to use this framework, the following components must be installed on your computer :
-- java 8 or higher
+- java 8
 - maven 3
 ******************************************************************************************
 Content :
