@@ -6,7 +6,7 @@
     <groupId>com.orange.lo</groupId>
     <artifactId>lo-js-decoder-test-framework-samples</artifactId>
     <name>LO :: js decoder test framework - samples</name>
-    <version>1.2.2</version>
+    <version>1.2.4</version>
 
     <properties>
         <!-- Project settings -->
@@ -40,7 +40,7 @@
         <dependency>
     		<groupId>com.orange.lo</groupId>
     		<artifactId>lo-js-decoder-test-framework-utils</artifactId>
-    		<version>1.2.2</version> 
+    		<version>1.2.4</version> 
     		<scope>test</scope>
         </dependency>  
     </dependencies>

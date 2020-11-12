@@ -6,6 +6,7 @@
 - 06/06/2018 v1.2.1 : the decode function is deprecated and replaced with the new formatAndDecode function
 - 14/09/2018 v1.2.2 : includes the latest version of the decoding library
 - 20/02/2019 v1.2.3 : includes the latest version of the decoding library
+- 12/11/2020 v1.2.4 : includes the latest version of the decoding library
 ******************************************************************************************
 
 ## Overview : 
@@ -31,7 +32,7 @@ The samples can be run in your favourite IDE (Eclipse, IntelliJ) or using the "m
 - lib directory: contains a jar with utility libraries for the lo-js-decoder-test-framework-samples project. This library must be installed in your maven repository with the command (to be run from the lib directory) :
 
 ```script
-mvn install:install-file -Dfile="<your absolute path to lo-js-decoder-test-framework-utils-1.2.3-jar-with-dependencies.jar>" -DgroupId="com.orange.lo" -DartifactId="lo-js-decoder-test-framework-utils" -Dversion="1.2.3" -Dpackaging="jar"
+mvn install:install-file -Dfile="<your absolute path to lo-js-decoder-test-framework-utils-1.2.4-jar-with-dependencies.jar>" -DgroupId="com.orange.lo" -DartifactId="lo-js-decoder-test-framework-utils" -Dversion="1.2.4" -Dpackaging="jar"
 ```
 
 - [See Github Wiki for user manual]( https://github.com/DatavenueLiveObjects/Payload-decoders/wiki )
