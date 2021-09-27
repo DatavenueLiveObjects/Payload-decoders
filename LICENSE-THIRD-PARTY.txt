@@ -72,7 +72,7 @@ Copyright 2012-2017 the original author or authors.
 assertJ distributed under the terms of Apache v2 (https://github.com/joel-costigliola/assertj-core/blob/master/LICENSE.txt)
 
 ----
-LiveObjects javascript decoder framework - version 1.2.2
+LiveObjects javascript decoder framework - version 2.0.0
 
 Copyright 2017 Orange
 lo-js-decoder-test-framework-utils distributed under the terms of Proprietary Orange software, you cannot use it into another context than LiveObjects. You
