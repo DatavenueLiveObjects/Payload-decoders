@@ -44,6 +44,25 @@ public abstract class TestBase {
 
     /**
      * This method loads the javascript code, formats the code as it will be provisioned (tabulations are removed, carriage returns are removed, slashes are
+     * doubled), then runs the javascript decoder on a specified encoded input value.
+     * 
+     * @param scriptPath:
+     *            the path of the javascript code (directory and file name without .js)
+     * @param input:
+     *            an encoded input test value
+     * @param inputDataMessage:
+     *            the full data message (if the decoding process needs to access any data message field)
+     * @param clazz:
+     *            the class which contains the deserialized output
+     * @return: T : instance of object containing the deserialized output
+     */
+    protected <T> T formatAndDecode(String scriptPath, String input, String inputDataMessage, Class<T> clazz) throws JsDecodingException {
+        String decodedJson = DecoderUtils.formatAndDecode(scriptPath, input, inputDataMessage);
+        return GSON.fromJson(decodedJson, clazz);
+    }
+
+    /**
+     * This method loads the javascript code, formats the code as it will be provisioned (tabulations are removed, carriage returns are removed, slashes are
      * doubled), then runs the javascript split decoder on a specified input DataMessage.
      *
      * @param scriptPath:
@@ -64,15 +83,6 @@ public abstract class TestBase {
         return outputPojo;
     }
 
-    /**
-     * Please use the formatAndDecode method which will load the script, format the script and decode a test value.
-     * 
-     */
-    @Deprecated
-    protected static String loadJavascriptFile(final String scriptPath) throws IOException {
-        return DecoderUtils.loadJavascriptFile(scriptPath);
-    }
-
     protected void checkScript(String scriptPath) throws JsDecodingException {
         List<String> constraintValidationfailures = DecoderUtils.validateJavascript(scriptPath);
         try {
@@ -82,6 +92,15 @@ public abstract class TestBase {
             throw new JsDecodingException(e.getMessage());
         }
 	}
+
+    /**
+     * Please use the formatAndDecode method which will load the script, format the script and decode a test value.
+     * 
+     */
+    @Deprecated
+    protected static String loadJavascriptFile(final String scriptPath) throws IOException {
+        return DecoderUtils.loadJavascriptFile(scriptPath);
+    }
 
     /**
      * Please use the formatAndDecode method instead.
@@ -99,25 +118,6 @@ public abstract class TestBase {
     @Deprecated
     protected <T> T decode(String jsScript, String input, String inputDataMessage, Class<T> clazz) throws DecodingException, JsDecoderBuildingException, IOException {
         String decodedJson = DecoderUtils.decode(jsScript, input, inputDataMessage);
-        return GSON.fromJson(decodedJson, clazz);
-    }
-
-    /**
-     * This method loads the javascript code, formats the code as it will be provisioned (tabulations are removed, carriage returns are removed, slashes are
-     * doubled), then runs the javascript decoder on a specified encoded input value.
-     * 
-     * @param scriptPath:
-     *            the path of the javascript code (directory and file name without .js)
-     * @param input:
-     *            an encoded input test value
-     * @param inputDataMessage:
-     *            the full data message (if the decoding process needs to access any data message field)
-     * @param clazz:
-     *            the class which contains the deserialized output
-     * @return: T : instance of object containing the deserialized output
-     */
-    protected <T> T formatAndDecode(String scriptPath, String input, String inputDataMessage, Class<T> clazz) throws JsDecodingException {
-        String decodedJson = DecoderUtils.formatAndDecode(scriptPath, input, inputDataMessage);
         return GSON.fromJson(decodedJson, clazz);
     }
 }
