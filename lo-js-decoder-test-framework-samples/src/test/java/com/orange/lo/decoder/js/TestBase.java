@@ -18,12 +18,26 @@ import com.orange.iaes.commons.json.JsonUtils;
 import com.orange.decoder.split.SplitDecoderResult;
 import com.orange.lo.decoder.js.exception.JsDecodingException;
 import com.orange.lo.decoder.js.utils.DecoderUtils;
+import com.orange.lo.decoder.js.utils.DecoderProfiler;
+import com.orange.lo.decoder.js.utils.ProfilingScore;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public abstract class TestBase {
     protected static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
+    
+    public static ProfilingScore profile(String scriptPath, String input, String inputDataMessage) {
+        ProfilingScore score = DecoderProfiler.profileSimple(scriptPath, input, inputDataMessage);
+        return score;
+    }
+
+    public static ProfilingScore profileSplit(String scriptPath, String input, String inputDataMessage) {
+        ProfilingScore score = DecoderProfiler.profileSplit(scriptPath, input, inputDataMessage);
+        return score;
+    }
+
+
 
     /**
      * This method loads the javascript code, formats the code as it will be provisioned (tabulations are removed, carriage returns are removed, slashes are
@@ -97,27 +111,27 @@ public abstract class TestBase {
      * Please use the formatAndDecode method which will load the script, format the script and decode a test value.
      * 
      */
-    @Deprecated
-    protected static String loadJavascriptFile(final String scriptPath) throws IOException {
-        return DecoderUtils.loadJavascriptFile(scriptPath);
-    }
-
-    /**
-     * Please use the formatAndDecode method instead.
-     * 
-     */
-    @Deprecated
-    protected <T> T decode(String script, String input, Class<T> clazz) throws DecodingException, JsDecoderBuildingException, IOException {
-        return decode(script, input, null, clazz);
-    }
-
-    /**
-     * Please use the formatAndDecode method instead.
-     * 
-     */
-    @Deprecated
-    protected <T> T decode(String jsScript, String input, String inputDataMessage, Class<T> clazz) throws DecodingException, JsDecoderBuildingException, IOException {
-        String decodedJson = DecoderUtils.decode(jsScript, input, inputDataMessage);
-        return GSON.fromJson(decodedJson, clazz);
-    }
+//    @Deprecated
+//    protected static String loadJavascriptFile(final String scriptPath) throws IOException {
+//        return DecoderUtils.loadJavascriptFile(scriptPath);
+//    }
+//
+//    /**
+//     * Please use the formatAndDecode method instead.
+//     * 
+//     */
+//    @Deprecated
+//    protected <T> T decode(String script, String input, Class<T> clazz) throws DecodingException, JsDecoderBuildingException, IOException {
+//        return decode(script, input, null, clazz);
+//    }
+//
+//    /**
+//     * Please use the formatAndDecode method instead.
+//     * 
+//     */
+//    @Deprecated
+//    protected <T> T decode(String jsScript, String input, String inputDataMessage, Class<T> clazz) throws DecodingException, JsDecoderBuildingException, IOException {
+//        String decodedJson = DecoderUtils.decode(jsScript, input, inputDataMessage);
+//        return GSON.fromJson(decodedJson, clazz);
+//    }
 }

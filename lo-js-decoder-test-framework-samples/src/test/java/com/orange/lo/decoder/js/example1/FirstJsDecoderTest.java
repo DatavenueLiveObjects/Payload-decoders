@@ -15,8 +15,10 @@ import com.orange.lo.decoder.js.doc.annotation.PayloadDescription;
 import com.orange.lo.decoder.js.example1.pojo.FirstDecoderOutput;
 import com.orange.lo.decoder.js.exception.JsDecodingException;
 import org.junit.Test;
+import lombok.extern.slf4j.Slf4j;
 
 @DeviceDescription(name = "My device name", manufacturer = "Manufacturer name", docLink = "http://www.mydevice.com/doc/doc.pdf", encoding = "")
+@Slf4j
 public class FirstJsDecoderTest extends TestBase {
 
     private final String SCRIPT_PATH = "example1/firstDecoder";
@@ -25,6 +27,12 @@ public class FirstJsDecoderTest extends TestBase {
     public void should_check_script() throws JsDecodingException {
         checkScript(SCRIPT_PATH);
     }
+    
+    @Test
+    public void should_profile() throws JsDecodingException {
+        String input = "<your payload example (copied from the device documentation for instance)>";
+        log.info("result: {}", profile(SCRIPT_PATH, input, null));
+    }	
 
     @Test
     @PayloadDescription(name = "the payload identifier", description = "the payload frame description.")

@@ -29,8 +29,10 @@ import com.orange.lo.decoder.js.example4.pojo.SplitPilotTemperatureAlertResult;
 import org.junit.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 import com.orange.iaes.commons.json.JsonEncodingException;
+import lombok.extern.slf4j.Slf4j;
 
 @DeviceDescription(name = "Pilot", manufacturer = "MANUFACTURER_EXAMPLE", docLink = "", encoding = "example_pilot_split_lora_v1.0.v1.0", hidden = false)
+@Slf4j
 public class SplitTest extends TestBase {
     private final String SCRIPT_PATH = "example4/splitDecoder";
 
@@ -38,6 +40,24 @@ public class SplitTest extends TestBase {
     public void should_check_script() throws JsDecodingException {
         checkScript(SCRIPT_PATH);
     }
+    
+    /*
+     * There is an issue with profiling Split decoders, for now profiling for those should be disabled
+     */
+    
+//    @Test
+//    public void should_profile() throws JsDecodingException {
+//    	String input = "6068";
+//        String datamessage = "{\n" +
+//                "    \"streamId\": \"pilotTemp1234\",\n" +
+//                "    \"model\": \"example_pilot_split_lora_v1.0\",\n" +
+//                "    \"timestamp\": \"2021-03-10T20:00:00.000Z\",\n" +
+//                "    \"value\": {\n" +
+//                "    \"payload\": \"" + input + "\"\n" +
+//                "    }\n" +
+//                "}";
+//        log.info("result: {}", profile(SCRIPT_PATH, input, datamessage));
+//    }
 
 	@Test
     @PayloadDescription(name = "Product Status", description = "Product Status frame relayed by decoder in 1 message")
@@ -64,6 +84,7 @@ public class SplitTest extends TestBase {
         assertThat(item.getValue().getFrameIndex()).isEqualTo(2);
         assertThat(item.getValue().getPendingJoin()).isEqualTo(0);
      }
+	
 	
     @Test
     @PayloadDescription(name = "Real Time Data", description = "Real Time Data frame relayed by decoder in 1 message") 

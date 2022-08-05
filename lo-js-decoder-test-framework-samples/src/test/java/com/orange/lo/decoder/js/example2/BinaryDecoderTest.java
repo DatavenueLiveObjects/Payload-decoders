@@ -15,14 +15,22 @@ import com.orange.lo.decoder.js.doc.annotation.PayloadDescription;
 import com.orange.lo.decoder.js.example2.pojo.BinaryDecoderOutput;
 import com.orange.lo.decoder.js.exception.JsDecodingException;
 import org.junit.Test;
+import lombok.extern.slf4j.Slf4j;
 
 @DeviceDescription(name = "Simple device", manufacturer = "manufacturer name", docLink = "", encoding = "")
+@Slf4j
 public class BinaryDecoderTest extends TestBase {
     private final String SCRIPT_PATH = "example2/binaryDecoder";
 
     @Test
     public void should_check_script() throws JsDecodingException {
         checkScript(SCRIPT_PATH);
+    }
+    
+    @Test
+    public void should_profile() throws JsDecodingException {
+        String input = "0127520a5a0213244567bdded154ffff07";
+        log.info("result: {}", profile(SCRIPT_PATH, input, null));
     }
 
     @Test
