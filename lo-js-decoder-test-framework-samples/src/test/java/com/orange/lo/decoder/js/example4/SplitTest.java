@@ -40,24 +40,20 @@ public class SplitTest extends TestBase {
     public void should_check_script() throws JsDecodingException {
         checkScript(SCRIPT_PATH);
     }
-    
-    /*
-     * There is an issue with profiling Split decoders, for now profiling for those should be disabled
-     */
-    
-//    @Test
-//    public void should_profile() throws JsDecodingException {
-//    	String input = "6068";
-//        String datamessage = "{\n" +
-//                "    \"streamId\": \"pilotTemp1234\",\n" +
-//                "    \"model\": \"example_pilot_split_lora_v1.0\",\n" +
-//                "    \"timestamp\": \"2021-03-10T20:00:00.000Z\",\n" +
-//                "    \"value\": {\n" +
-//                "    \"payload\": \"" + input + "\"\n" +
-//                "    }\n" +
-//                "}";
-//        log.info("result: {}", profile(SCRIPT_PATH, input, datamessage));
-//    }
+      
+    @Test
+    public void should_profile() throws JsDecodingException {
+    	String input = "6068";
+        String datamessage = "{\n" +
+                "    \"streamId\": \"pilotTemp1234\",\n" +
+                "    \"model\": \"example_pilot_split_lora_v1.0\",\n" +
+                "    \"timestamp\": \"2021-03-10T20:00:00.000Z\",\n" +
+                "    \"value\": {\n" +
+                "    \"payload\": \"" + input + "\"\n" +
+                "    }\n" +
+                "}";
+        log.info("result: {}", profileSplit(SCRIPT_PATH, input, datamessage));
+    }
 
 	@Test
     @PayloadDescription(name = "Product Status", description = "Product Status frame relayed by decoder in 1 message")
