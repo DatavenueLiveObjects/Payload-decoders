@@ -20,7 +20,9 @@ Javascript samples for binary decoding are also provided for a quick startup.
 JUnit tests and assertions help you validate the payload decoding.
 
 When your javascript decoder is ready, you can contact the Orange Live Objects team for the script acceptance (validation) and provisioning. 
-Please send an email to <liveobjects.decoder@orange.com> with the subject "JS decoder acceptance". **PLEASE zip your JSON file before attaching it, otherwise it will be deleted by the email server!**
+Please prefer sending these items to <liveobjects.decoder@orange.com> without attachment in your email. 
+**Use file transfer services or repository to provide a link in your message.**
+
 
 ******************************************************************************************
 Pre-requisite : in order to use this framework, the following components must be installed on your computer :
