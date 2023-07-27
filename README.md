@@ -38,6 +38,12 @@ The samples can be run in your favourite IDE (Eclipse, IntelliJ) or using the "m
 ```script
 mvn install:install-file -Dfile="<your absolute path to lo-js-decoder-test-framework-utils-3.0.1-SNAPSHOT-jar-with-dependencies.jar>" -DgroupId="com.orange.lo" -DartifactId="lo-js-decoder-test-framework-utils" -Dversion="3.0.1-SNAPSHOT" -Dpackaging="jar"
 ```
+- decoder-preliminary-acceptance [See WIKI](https://github.com/DatavenueLiveObjects/Payload-decoders/wiki/Guidelines-for-script-development#preliminary-acceptance-testing) : *(**Node.js** and **npm** installation required)* in order to test your javascript decoder for compatibility with ES5 and other requirements, please use the script in the following way:
+```bash
+cd decoder-preliminary-acceptance
+npm install
+node main.js -f <path-to-javascript-decoder>
+```
 
 - [See Github Wiki for user manual]( https://github.com/DatavenueLiveObjects/Payload-decoders/wiki )
 ******************************************************************************************
