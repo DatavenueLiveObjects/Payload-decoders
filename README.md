@@ -31,12 +31,12 @@ Pre-requisite : in order to use this framework, the following components must be
 ******************************************************************************************
 Content :
 - lo-js-decoder-test-framework-samples directory : a maven project containing Javascript decoder samples. 
-The samples can be run in your favourite IDE (Eclipse, IntelliJ) or using the "mvn test" command.
+The samples can be run in your favourite IDE (IntelliJ is recommended) or using the "mvn test" command.
 
 - lib directory: contains a jar with utility libraries for the lo-js-decoder-test-framework-samples project. This library must be installed in your maven repository with the command (to be run from the lib directory) :
 
 ```script
-mvn install:install-file -Dfile="<your absolute path to lo-js-decoder-test-framework-utils-3.0.1-SNAPSHOT-jar-with-dependencies.jar>" -DgroupId="com.orange.lo" -DartifactId="lo-js-decoder-test-framework-utils" -Dversion="3.0.1-SNAPSHOT" -Dpackaging="jar"
+mvn install:install-file -Dfile="<your absolute path to lo-js-decoder-test-framework-utils-3.0.1-jar-with-dependencies.jar>" -DgroupId="com.orange.lo" -DartifactId="lo-js-decoder-test-framework-utils" -Dversion="3.0.1" -Dpackaging="jar"
 ```
 - decoder-preliminary-acceptance [See WIKI](https://github.com/DatavenueLiveObjects/Payload-decoders/wiki/Guidelines-for-script-development#preliminary-acceptance-testing) : *(**Node.js** and **npm** installation required)* in order to test your javascript decoder for compatibility with ES5 and other requirements, please use the script in the following way:
 ```bash
