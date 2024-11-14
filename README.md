@@ -9,6 +9,7 @@
 - 12/11/2020 v1.2.4 : includes the latest version of the decoding library
 - 28/09/2021 v2.0.0 : includes the latest version of the decoding library (classic and split decoders)
 - 05/08/2022 v2.1.0 : includes the latest version of the decoding library (profiling added)
+- 27/07/2023 ------ : new method of decoder syntax verification: decoder-preliminary-acceptance
 ******************************************************************************************
 
 ## Overview : 
