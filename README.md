@@ -11,6 +11,7 @@
 - 05/08/2022 v2.1.0 : includes the latest version of the decoding library (profiling added)
 - 27/07/2023 ------ : new method of decoder syntax verification: decoder-preliminary-acceptance
 - 08/08/2023 v3.0.1 : includes the latest version of the decoding library
+- 23/06/2026 v3.0.2 : includes the latest version of the decoding library (update to Java 17)
 ******************************************************************************************
 
 ## Overview : 
@@ -28,7 +29,7 @@ Please prefer sending these items to <liveobjects.decoder@orange.com> without at
 
 ******************************************************************************************
 Pre-requisite : in order to use this framework, the following components must be installed on your computer :
-- java 8
+- java 17
 - maven 3
 ******************************************************************************************
 Content :
@@ -38,7 +39,7 @@ The samples can be run in your favourite IDE (IntelliJ is recommended) or using 
 - lib directory: contains a jar with utility libraries for the lo-js-decoder-test-framework-samples project. This library must be installed in your maven repository with the command (to be run from the lib directory) :
 
 ```script
-mvn install:install-file -Dfile="<your absolute path to lo-js-decoder-test-framework-utils-3.0.1-jar-with-dependencies.jar>" -DgroupId="com.orange.lo" -DartifactId="lo-js-decoder-test-framework-utils" -Dversion="3.0.1" -Dpackaging="jar"
+mvn install:install-file -Dfile="<your absolute path to lo-js-decoder-test-framework-utils-3.0.2-jar-with-dependencies.jar>" -DgroupId="com.orange.lo" -DartifactId="lo-js-decoder-test-framework-utils" -Dversion="3.0.2" -Dpackaging="jar"
 ```
 - decoder-preliminary-acceptance [See WIKI](https://github.com/DatavenueLiveObjects/Payload-decoders/wiki/Guidelines-for-script-development#preliminary-acceptance-testing) : *(**Node.js** and **npm** installation required)* in order to test your javascript decoder for compatibility with ES5 and other requirements, please use the script in the following way:
 ```bash
