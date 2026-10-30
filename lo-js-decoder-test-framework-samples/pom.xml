@@ -6,11 +6,11 @@
     <groupId>com.orange.lo</groupId>
     <artifactId>lo-js-decoder-test-framework-samples</artifactId>
     <name>LO :: js decoder test framework - samples</name>
-    <version>2.1.0</version>
+    <version>3.0.2</version>
 
     <properties>
         <!-- Project settings -->
-        <java.version>1.8</java.version>
+        <java.version>17</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
@@ -40,7 +40,7 @@
         <dependency>
     		<groupId>com.orange.lo</groupId>
     		<artifactId>lo-js-decoder-test-framework-utils</artifactId>
-    		<version>3.0.1</version>
+    		<version>3.0.2</version>
     		<scope>test</scope>
         </dependency>  
     </dependencies>
